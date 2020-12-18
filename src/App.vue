@@ -4,15 +4,24 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
-import HelloWorld from './components/HelloWorld.vue'
+import { defineComponent } from 'vue';
+import { useStore } from './store';
+import HelloWorld from './components/HelloWorld.vue';
 
 export default defineComponent({
   name: 'App',
   components: {
     HelloWorld
+  },
+  async setup () {
+    const store = useStore();
+
+    store.commit('SHOPPING_CART/CLEAR');
+    store.commit('SHOPPING_CART/ADD_ITEM', { itemId: 'id' });
+    store.dispatch('SHOPPING_CART/CHECKOUT');
+    const balance = await store.dispatch('WALLET/PAY', { amount: 3 });
   }
-})
+});
 </script>
 
 <style>
