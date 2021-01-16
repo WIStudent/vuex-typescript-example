@@ -1,4 +1,4 @@
-import { ADD_ITEM, CHECKKOUT, CLEAR, State } from './types';
+import { ADD_ITEM, CHECKOUT, CLEAR, State } from './types';
 import { addItem, clear } from './mutations';
 import { checkout } from './actions';
 
@@ -14,6 +14,6 @@ export default {
     [CLEAR]: clear
   },
   actions: {
-    [CHECKKOUT]: checkout
+    [CHECKOUT]: checkout
   }
 };

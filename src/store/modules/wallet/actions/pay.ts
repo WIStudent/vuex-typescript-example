@@ -1,10 +1,10 @@
-import { Commit, PayPayload, PayResult, State } from '../types';
+import { Commit, PayPayload, PayResult, State, DECREASE } from '../types';
 
 interface Context {
   state: Pick<State, 'balance'>;
   commit: Commit;
 }
 export default async ({ commit, state }: Context, payload: PayPayload): PayResult => {
-  commit('DECREASE', payload);
+  commit(DECREASE, payload);
   return state.balance;
 };

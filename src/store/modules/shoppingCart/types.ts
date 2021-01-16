@@ -17,7 +17,7 @@ export const CLEAR = 'CLEAR';
 export type ClearPayload = undefined;
 
 // CHECKOUT action
-export const CHECKKOUT = 'CHECKOUT';
+export const CHECKOUT = 'CHECKOUT';
 export type CheckoutPayload = undefined;
 export type CheckoutResult = Promise<void>
 
@@ -27,5 +27,5 @@ export interface Commit<Prefix extends string = ''> {
 }
 
 export interface Dispatch<Prefix extends string = ''> {
-  (type: `${Prefix}${typeof CHECKKOUT}`, payload?: CheckoutPayload, options?: DispatchOptions): CheckoutResult;
+  (type: `${Prefix}${typeof CHECKOUT}`, payload?: CheckoutPayload, options?: DispatchOptions): CheckoutResult;
 }
